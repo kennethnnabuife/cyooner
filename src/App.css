@@ -21,7 +21,7 @@
     0,
     0,
     0,
-    0.55
+    0.4
   ); /* This is a semi-transparent black overlay (adjust the last value for darkness) */
 }
 
@@ -106,5 +106,5 @@
   font-weight: 400;
   margin-top: 100px;
   text-align: center;
-  line-height: 150%;
+  line-height: 160%;
 }
