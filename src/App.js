@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -8,7 +8,27 @@ function App() {
     setShowMenu(!showMenu);
   };
 
-  const SlideAtrandomNumbers = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100) + 1);
+  const [isArrowUp, setIsArrowUp] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsArrowUp((prev) => !prev);
+    }, 600); // Toggle every 1 second
+
+    const timeout = setTimeout(() => {
+      clearInterval(interval);
+    }, 5000); // Remove after 2 seconds
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  const SlideAtrandomNumbers = Array.from(
+    { length: 10 },
+    () => Math.floor(Math.random() * 100) + 1
+  );
 
   return (
     <div>
@@ -39,6 +59,15 @@ function App() {
           <div className="hero-main-text">
             We make quality furnitures and interiors that create a feel of
             elegance to your home and office!
+          </div>
+
+          <div className="arrow-div">
+            <div className={`arrow-container ${isArrowUp ? "up" : "down"}`}>
+              <div className="arrow">
+                <div className="arrow-line"></div>
+                <div className="arrow-line2"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
