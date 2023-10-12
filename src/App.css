@@ -1,40 +1,31 @@
 * {
   font-family: "Young Serif", serif;
+  margin: 0;
 }
 
-.header-and-hero {
-  position: absolute;
+.hero-div {
   display: flex;
-  background-image: url("https://res.cloudinary.com/dynmdbdfu/image/upload/v1697077932/aranprime-KbytCpI1i5I-unsplash22_tamiuj.jpg");
+  justify-content: center;
+  background-image: url("./background\ img.jpg");
   background-size: cover; /* This ensures the image covers the entire container */
   height: 500px;
-  left: 0;
-  right: 0;
-  top: 0;
-  object-fit: cover; /* Ensure the image covers the container */
-  object-position: right;
-  overflow: hidden;
 }
 
 .overlay {
   position: absolute;
-  top: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  height: 100%;
+  height: 500px;
   background-color: rgba(
     0,
     0,
     0,
-    0.603
+    0.55
   ); /* This is a semi-transparent black overlay (adjust the last value for darkness) */
 }
 
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   width: 100%;
   height: 65px;
   display: flex;
@@ -89,37 +80,31 @@
   padding: 10px;
   background-color: #fff;
   position: absolute;
-  top: 60px;
+  top: 65px;
   left: 0;
   right: 0;
   border-top: 1px solid #000;
+  z-index: 2;
 }
 
 .menu-items a {
   text-decoration: none;
   color: #000;
-  margin: 10px 0;
-}
-
-.hero {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 435px;
-  top: 65px;
+  margin: 10px;
 }
 
 .sub-hero {
+  position: absolute;
   display: flex;
   justify-content: center;
 }
 
 .hero-main-text {
   width: 250px;
-  font-size: 19px;
+  font-size: 18.3px;
   color: white;
   font-weight: 400;
-  margin-top: 70px;
+  margin-top: 100px;
   text-align: center;
   line-height: 150%;
 }
