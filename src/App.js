@@ -8,6 +8,8 @@ function App() {
     setShowMenu(!showMenu);
   };
 
+  const SlideAtrandomNumbers = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100) + 1);
+
   return (
     <div>
       <div className="header">
