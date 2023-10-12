@@ -8,7 +8,7 @@
   justify-content: center;
   background-image: url("./background\ img.jpg");
   background-size: cover; /* This ensures the image covers the entire container */
-  height: 500px;
+  height: 520px;
 }
 
 .overlay {
@@ -51,7 +51,7 @@
 .line {
   width: 26px;
   height: 4px;
-  background-color: #1f2824;
+  background-color: #011023;
   margin: 3px 0;
   transition: 0.2s;
   border-radius: 10px;
@@ -159,4 +159,67 @@
 
 .down {
   transform: translateY(+20px);
+}
+
+.learn-more-div {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.learn-more {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 44px;
+  background: #b80617;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.first-info {
+  display: flex;
+  justify-content: center;
+  background: white;
+  height: 400px;
+  width: 100%;
+}
+
+.square-stuff {
+  border-radius: 10px;
+  position: relative;
+  margin-top: -30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background: #011023;
+  width: 80%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.dema-line {
+  height: 50px;
+  width: 1px;
+  background: #fff;
+}
+
+.experience-info {
+  width: 70px;
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+}
+
+.sales-info {
+  text-align: center;
+  width: 70px;
+  font-size: 13px;
+  color: #fff;
 }

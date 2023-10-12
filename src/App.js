@@ -17,7 +17,7 @@ function App() {
 
     const timeout = setTimeout(() => {
       clearInterval(interval);
-    }, 5000); // Remove after 2 seconds
+    }, 30000); // Remove after 2 seconds
 
     return () => {
       clearInterval(interval);
@@ -69,6 +69,16 @@ function App() {
               </div>
             </div>
           </div>
+          <div className="learn-more-div">
+            <div className="learn-more">Learn More</div>
+          </div>
+        </div>
+      </div>
+      <div className="first-info">
+        <div className="square-stuff">
+          <div className="experience-info">10 Years of Experience</div>
+          <div className="dema-line"></div>
+          <div className="sales-info">100+ Furnitures Sold</div>
         </div>
       </div>
     </div>
