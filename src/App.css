@@ -8,7 +8,9 @@
   justify-content: center;
   background-image: url("./background\ img.jpg");
   background-size: cover; /* This ensures the image covers the entire container */
-  height: 520px;
+  height: 510px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .overlay {
@@ -16,9 +18,9 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 500px;
+  height: 510px;
   background: linear-gradient(
-    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.9),
     rgba(0, 0, 0, 0)
   ); /* This is a semi-transparent black overlay (adjust the last value for darkness) */
 }
@@ -99,7 +101,8 @@
 }
 
 .hero-main-text {
-  width: 250px;
+  align-self: center;
+  width: 69.44%;
   font-size: 18.3px;
   color: white;
   font-weight: 400;
@@ -174,7 +177,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 130px;
+  width: 36.1%;
   height: 44px;
   background: #b80617;
   font-size: 15px;
@@ -193,15 +196,16 @@
 .square-stuff {
   border-radius: 10px;
   position: relative;
-  margin-top: -30px;
+  margin-top: -15px;
   margin-left: 20px;
   margin-right: 20px;
   background: #011023;
   width: 80%;
-  height: 90px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  border: 1px solid white;
 }
 
 .dema-line {

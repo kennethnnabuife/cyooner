@@ -11,7 +11,12 @@ function App() {
   const [isArrowUp, setIsArrowUp] = useState(true);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    return () => {
+      setInterval(() => {
+        setIsArrowUp((prev) => !prev);
+      }, 600); // Toggle every 1 second
+    };
+    /*const interval = setInterval(() => {
       setIsArrowUp((prev) => !prev);
     }, 600); // Toggle every 1 second
 
@@ -22,7 +27,7 @@ function App() {
     return () => {
       clearInterval(interval);
       clearTimeout(timeout);
-    };
+    };*/
   }, []);
 
   const SlideAtrandomNumbers = Array.from(
