@@ -155,38 +155,36 @@ function App() {
         </div>
       </div>
 
-      <div className="slick-area">
-        <div className="featured">Our Products</div>
-        <div className="slider-main-div">
-          <Slider {...settings} className="slider1">
-            {slides.map((slide, index) => (
-              <div key={index}>
-                <img
-                  style={{
-                    display: "flex",
-                    justifySelf: "center",
-                    width: "100%",
-                    height: "240px",
-                  }}
-                  src={slide.imgSrc}
-                  alt={`Slide ${index + 1}`}
-                />
-                <div className="image-text-div">
-                  <div>{slide.text}</div>
-                </div>
+      <div className="featured">Our Products</div>
+      <div className="slider-main-div">
+        <Slider {...settings} className="slider1">
+          {slides.map((slide, index) => (
+            <div key={index}>
+              <img
+                style={{
+                  display: "flex",
+                  justifySelf: "center",
+                  width: "100%",
+                  height: "240px",
+                }}
+                src={slide.imgSrc}
+                alt={`Slide ${index + 1}`}
+              />
+              <div className="image-text-div">
+                <div>{slide.text}</div>
               </div>
-            ))}
-          </Slider>
-        </div>
-        <div className="our-products-text">
-          Our products/services range from making and fixing couches, Bed
-          frames, kitchen cabinets, dining sets, office tables, Bookshelf, TV
-          Console etc. and for your Estate, Hotel, Home, and Office.
-        </div>
-        <div className="contact-us-div">
-          <div className="products-contact-us">VIEW ALL PRODUCTS</div>
-          <div className="view-all-button">Contact Us</div>
-        </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <div className="our-products-text">
+        Our products/services range from making and fixing couches, Bed frames,
+        kitchen cabinets, dining sets, office tables, Bookshelf, TV Console etc.
+        and for your Estate, Hotel, Home, and Office.
+      </div>
+      <div className="contact-us-div">
+        <div className="products-contact-us">VIEW ALL PRODUCTS</div>
+        <div className="view-all-button">Contact Us</div>
       </div>
       <div className="delivery-main-div">
         <div className="delivery-header">Delivery</div>
