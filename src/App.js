@@ -1,5 +1,6 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -25,7 +26,7 @@ function App() {
 
     const timeout = setTimeout(() => {
       clearInterval(interval);
-    }, 30000); // Remove after 2 seconds
+    }, 30000); // Remove after 30 seconds
 
     return () => {
       clearInterval(interval);
@@ -48,33 +49,45 @@ function App() {
     autoplaySpeed: 2000, // Time between slides (in milliseconds)
   };
 
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when it comes into view
+  });
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (inView) {
+      sectionRef.current.classList.add("fancy-scroll");
+    }
+  }, [inView]);
+
   const slides = [
     {
       imgSrc:
         "https://res.cloudinary.com/dynmdbdfu/image/upload/v1697752853/Livingroom_2_gzmces.jpg",
-      text: "Living rooms",
+      text: "LIVING ROOMS",
     },
     {
       imgSrc:
         "https://res.cloudinary.com/dynmdbdfu/image/upload/v1697752862/Bedframe_2_ujcrvt.jpg",
-      text: "Bedrooms",
+      text: "BEDROOMS",
     },
 
     {
       imgSrc:
         "https://res.cloudinary.com/dynmdbdfu/image/upload/v1697757997/Screenshot_2023-10-20_002556_ko5m8a.png",
-      text: "Offices",
+      text: "OFFICES",
     },
 
     {
       imgSrc:
         "https://res.cloudinary.com/dynmdbdfu/image/upload/v1697752853/Kitchen_Island_q7luou.jpg",
-      text: "Kitchen",
+      text: "KITCHEN",
     },
     {
       imgSrc:
         "https://res.cloudinary.com/dynmdbdfu/image/upload/v1697752862/Dinning_set_1_h6y33j.jpg",
-      text: "Dining",
+      text: "DINING",
     },
     // Add similar objects for other images
   ];
@@ -102,10 +115,10 @@ function App() {
         </div>
       )}
 
-      <div className="hero-div">
+      <div className="hero-div" ref={ref}>
         <div className="overlay"></div>
         <div className="sub-hero">
-          <div className="hero-main-text">
+          <div className="hero-main-text" ref={sectionRef}>
             We make quality furniture and interiors that create a feel of
             elegance to your home and office!
           </div>
@@ -142,38 +155,38 @@ function App() {
         </div>
       </div>
 
-      <div className="featured">Our Products</div>
-      <div className="slider-main-div">
-        <Slider {...settings} className="slider1">
-          {slides.map((slide, index) => (
-            <div key={index}>
-              <img
-                style={{
-                  display: "flex",
-                  justifySelf: "center",
-                  width: "100%",
-                  height: "240px",
-                }}
-                src={slide.imgSrc}
-                alt={`Slide ${index + 1}`}
-              />
-              <div className="image-text-div">
-                <div>{slide.text}</div>
+      <div className="slick-area">
+        <div className="featured">Our Products</div>
+        <div className="slider-main-div">
+          <Slider {...settings} className="slider1">
+            {slides.map((slide, index) => (
+              <div key={index}>
+                <img
+                  style={{
+                    display: "flex",
+                    justifySelf: "center",
+                    width: "100%",
+                    height: "240px",
+                  }}
+                  src={slide.imgSrc}
+                  alt={`Slide ${index + 1}`}
+                />
+                <div className="image-text-div">
+                  <div>{slide.text}</div>
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-      <div className="our-products-text">
-        Our products/services range from making and fixing couches, Bed frames,
-        kitchen cabinets, dining sets, office tables, Bookshelf, TV Console etc.
-        and for your Estate, Hotel, Home, and Office. Our team of carpenters
-        have wide experience spanning two decades within and outside the shores
-        of Nigeria.
-      </div>
-      <div className="contact-us-div">
-        <div className="products-contact-us">View all products</div>
-        <div className="view-all-button">Contact us</div>
+            ))}
+          </Slider>
+        </div>
+        <div className="our-products-text">
+          Our products/services range from making and fixing couches, Bed
+          frames, kitchen cabinets, dining sets, office tables, Bookshelf, TV
+          Console etc. and for your Estate, Hotel, Home, and Office.
+        </div>
+        <div className="contact-us-div">
+          <div className="products-contact-us">VIEW ALL PRODUCTS</div>
+          <div className="view-all-button">Contact Us</div>
+        </div>
       </div>
       <div className="delivery-main-div">
         <div className="delivery-header">Delivery</div>
