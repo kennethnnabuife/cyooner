@@ -184,7 +184,7 @@ function App() {
       </div>
       <div className="contact-us-div">
         <div className="products-contact-us">VIEW ALL PRODUCTS</div>
-        <div className="view-all-button">Contact Us</div>
+        <div className="view-all-button">CONTACT US</div>
       </div>
       <div className="delivery-main-div">
         <div className="delivery-header">Delivery</div>
