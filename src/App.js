@@ -4,6 +4,18 @@ import { useInView } from "react-intersection-observer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import PhoneIcon from "./phone-icon.svg";
+
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -92,6 +104,33 @@ function App() {
     // Add similar objects for other images
   ];
 
+  const testimonials = [
+    {
+      id: 1,
+      content:
+        "Cyooner's furniture is simply outstanding! Their quality work sets them apart. I couldn't be happier!",
+      author: "Kenneth Nnabuife",
+      occupation: "CEO, SabiWeb.com",
+      img: "https://res.cloudinary.com/dynmdbdfu/image/upload/v1698961697/1674290441410_kc9g8m.jpg",
+    },
+    {
+      id: 2,
+      content:
+        "Cyooner's designs captivate with their timeless elegance, ensuring every item stands the test of time.",
+      author: "Jane Doe",
+      occupation: "CTO, Company B",
+      img: "https://res.cloudinary.com/dynmdbdfu/image/upload/v1698962567/vicky-hladynets-C8Ta0gwPbQg-unsplash_h92hkx_hjlk08.png",
+    },
+    {
+      id: 3,
+      content:
+        "Cyooner's designs evoke a perfect blend of elegance and comfort, creating pieces that truly stand out.",
+      author: "James Smith",
+      occupation: "COO, Company C",
+      img: "https://res.cloudinary.com/dynmdbdfu/image/upload/v1698962457/jonas-kakaroto-mjRwhvqEC0U-unsplash_v3xkqe_q46nup.png",
+    },
+  ];
+
   return (
     <div>
       <div className="header">
@@ -138,7 +177,7 @@ function App() {
       </div>
       <div className="first-info">
         <div className="square-stuff">
-          <div className="experience-info">10 Years of Experience</div>
+          <div className="experience-info">Over 10 Years of Experience</div>
           <div className="dema-line"></div>
           <div className="sales-info">100+ Furnitures Sold</div>
         </div>
@@ -193,15 +232,175 @@ function App() {
           Location is not a barrier as we have a team that moves on demand!
         </div>
       </div>
-      <div className="delivery-text-div">
-        To ensure safe delivery of your furniture/design for our online
-        customers within and outside Nigeria, we are in partnership with a
-        reputable domestic/international coordination company to aid in that
-        regard for items that are outside the scope of the company delivery van.
+      <div
+        style={{
+          position: "relative",
+          left: "0",
+          right: "0",
+          top: "0",
+          bottom: "0",
+          paddingTop: "30px",
+          paddingBottom: "70px",
+        }}
+      >
+        <div className="delivery-text-div">
+          To ensure safe delivery of your furniture/design for our online
+          customers within and outside Nigeria, we are in partnership with a
+          reputable domestic/international coordination company to aid in that
+          regard for items that are outside the scope of the company delivery
+          van.
+        </div>
       </div>
-      <div className="testimony-div">
-        <div className="testimony-header">Hear From Our Clients</div>
-        <div className="testimony-text"></div>
+      <div
+        style={{
+          paddingTop: "20px",
+          background: "white",
+          paddingBottom: "50px",
+        }}
+      >
+        <div className="testimony-div">
+          <div className="testimony-header">Hear From Our Clients</div>
+        </div>
+        <Swiper
+          // install Swiper modules
+          modules={[Navigation, Pagination, A11y]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+          style={{ height: "200px" }}
+        >
+          {testimonials.map((testimonial) => {
+            return (
+              <SwiperSlide key={testimonial.id}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    marginLeft: "40px",
+                    marginRight: "40px",
+                    marginTop: "30px",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img
+                      src={testimonial.img}
+                      style={{
+                        width: "45px",
+                        borderRadius: "50%",
+                        marginRight: "15px",
+                      }}
+                    />
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-evenly",
+                      }}
+                    >
+                      <div style={{ fontSize: "15px", fontWeight: "600" }}>
+                        {testimonial.author}
+                      </div>
+                      <div style={{ fontSize: "14px" }}>
+                        {testimonial.occupation}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      marginTop: "10px",
+                      lineHeight: "170%",
+                      fontWeight: "500",
+                      marginBottom: "30px",
+                      fontSize: "15px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {testimonial.content}
+                  </div>
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "100px",
+          marginBottom: "100px",
+        }}
+      >
+        <div
+          style={{
+            fontSize: "30px",
+            marginBottom: "10px",
+            color: "#011023",
+            fontWeight: "500",
+          }}
+        >
+          Contact Us
+        </div>
+        <div style={{ display: "flex", marginBottom: "14px" }}>
+          <div>
+            <img src={PhoneIcon} style={{ width: "16px", marginTop: "4px" }} />
+          </div>
+          <div style={{ marginLeft: "8px" }}>
+            <a
+              href="tel:+2348078131131"
+              style={{ color: "#011023", fontSize: "18px" }}
+            >
+              080 7813 1131
+            </a>
+          </div>
+        </div>
+        <div
+          style={{ display: "flex", marginBottom: "8px", fontWeight: "500" }}
+        >
+          Office Location:
+        </div>
+        <div>Abuja, Nigeria</div>
+      </div>
+      <div className="big-contact-div">
+        <div className="form-header">Send Us A Message</div>
+        <form action="https://formsubmit.co/info@sabiweb.com" method="POST">
+          <input
+            type="text"
+            className="form-control"
+            name="name"
+            placeholder="Name"
+            required="required"
+          />
+          <input
+            type="email"
+            className="form-control"
+            name="email"
+            placeholder="Email"
+            required="required"
+          />
+          <input
+            type="text"
+            className="form-control"
+            name="subject"
+            placeholder="Phone"
+            required="required"
+          />
+          <textarea
+            className="form-control"
+            name="message"
+            placeholder="Message"
+            required="required"
+          ></textarea>
+          <button type="submit" className="submit-link">
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   );
