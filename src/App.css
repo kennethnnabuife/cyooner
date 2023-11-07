@@ -662,12 +662,12 @@ body {
     justify-content: space-evenly;
   }
   .delivery-main-div img {
-    height: 400px;
-    width: 600px;
+    display: none;
   }
   .delivery-header {
     letter-spacing: 20px;
     font-weight: 700;
+    margin-bottom: 40px;
   }
   .delivery-text {
     font-size: 26px;

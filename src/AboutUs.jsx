@@ -42,7 +42,7 @@ function AboutUs() {
           Our mission at Cyooner is to make qualitative furniture and interiors
           that create a feel of elegance in your home and office.
         </div>
-        <div className="mission-div">Our Visiion</div>
+        <div className="mission-div">Our Vision</div>
         <div className="about-last-text">
           Our vision at Cyooner is to revolutionize the Nigerian furniture and
           interior design industry and become a centerpiece of its innovation
