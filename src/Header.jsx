@@ -41,7 +41,7 @@ function Header() {
         <div className={`line ${showMenu ? "active" : ""}`}></div>
       </div>
 
-      {showMenu && (
+      {(showMenu || window.innerWidth >= 601) && (
         <div className="menu-items">
           <a
             onClick={() => {

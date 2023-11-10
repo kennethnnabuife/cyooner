@@ -65,7 +65,7 @@ function Home() {
   }, [inView]);
 
   const scrollToIntroDiv = () => {
-    const IntroDivElement = document.getElementById("intro-div");
+    const IntroDivElement = document.getElementById("featured");
 
     window.scrollTo({
       top: IntroDivElement.offsetTop,
@@ -118,7 +118,7 @@ function Home() {
       content:
         "Cyooner's designs captivate with their timeless elegance, ensuring every item stands the test of time.",
       author: "Jane Doe",
-      occupation: "CTO, Company B",
+      occupation: "CTO, Strider",
       img: "https://res.cloudinary.com/dynmdbdfu/image/upload/v1698962567/vicky-hladynets-C8Ta0gwPbQg-unsplash_h92hkx_hjlk08.png",
     },
     {
@@ -126,7 +126,7 @@ function Home() {
       content:
         "Cyooner's designs evoke a perfect blend of elegance and comfort, creating pieces that truly stand out.",
       author: "James Smith",
-      occupation: "COO, Company C",
+      occupation: "COO, T&J",
       img: "https://res.cloudinary.com/dynmdbdfu/image/upload/v1698962457/jonas-kakaroto-mjRwhvqEC0U-unsplash_v3xkqe_q46nup.png",
     },
   ];
@@ -137,7 +137,7 @@ function Home() {
         <div className="overlay"></div>
         <div className="sub-hero">
           <div className="hero-main-text" ref={sectionRef}>
-            We make quality furniture and interiors that create a feel of
+            We make Quality Furniture and Interiors that create a feel of
             elegance to your home and office!
           </div>
 
@@ -180,7 +180,9 @@ function Home() {
         </div>
       </div>
 
-      <div className="featured">Our Products</div>
+      <div id="featured" className="featured">
+        Our Products
+      </div>
       <div className="slider-main-div">
         <Slider {...settings} className="slider1">
           {slides.map((slide, index) => (
