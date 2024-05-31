@@ -264,7 +264,6 @@ function Home() {
           <div className="testimony-header">Hear From Our Clients</div>
         </div>
         <Swiper
-          // install Swiper modules
           modules={[Navigation, Pagination, A11y]}
           spaceBetween={50}
           slidesPerView={1}
