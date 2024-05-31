@@ -110,7 +110,7 @@ function Home() {
       content:
         "Cyooner's furniture is simply outstanding! Their quality work sets them apart. I couldn't be happier!",
       author: "Kenneth Nnabuife",
-      occupation: "CEO, SabiWeb.com",
+      occupation: "CEO, Mykles",
       img: "https://res.cloudinary.com/dynmdbdfu/image/upload/v1698961697/1674290441410_kc9g8m.jpg",
     },
     {
@@ -291,8 +291,10 @@ function Home() {
                       src={testimonial.img}
                       style={{
                         width: "45px",
+                        height: "45px",
                         borderRadius: "50%",
                         marginRight: "15px",
+                        objectFit: "cover",
                       }}
                     />
                     <div

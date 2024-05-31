@@ -437,12 +437,12 @@ body {
 }
 
 .form-control {
-  width: 300px;
+  width: 97%;
   font-size: 0.8rem;
   font-weight: 500;
   border: 1px solid #fff;
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-  padding-left: 10px;
+  padding-left: 3%;
   padding-top: 14px;
   padding-bottom: 14px;
   margin-bottom: 10px;
